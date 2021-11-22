@@ -1,4 +1,4 @@
 [core]
     remote = dvc-remote
 ['remote "dvc-remote"']
-    url = /tmp/dvc-storage
+    url = gdrive://1dzr5OwJ0yYvOi_XUvCgwscor82ynv_yu
