@@ -4,8 +4,8 @@ stages:
     cmd: /Users/kasyap/anaconda3/bin/python src/dataprocessing.py
     deps:
     - path: data/wine-quality.csv
-      md5: bb905a8e35ee30cf4e6b0d54229c22b3
-      size: 209626
+      md5: fcb09923da523f6909210c354ae4296f
+      size: 209410
     - path: src/dataprocessing.py
       md5: 3ea6b40663849a4c8c33c206638ecebc
       size: 890
@@ -16,15 +16,15 @@ stages:
         parameters.version: main
     outs:
     - path: data1/prepared
-      md5: fec68d87995ef4920c1751c270f1ec1e.dir
-      size: 289768
+      md5: 41fde09046f3479f25abc8d80d3c1776.dir
+      size: 289477
       nfiles: 4
   trainevaluate:
     cmd: /Users/kasyap/anaconda3/bin/python src/trainevaluate.py
     deps:
     - path: data1/prepared
-      md5: fec68d87995ef4920c1751c270f1ec1e.dir
-      size: 289768
+      md5: 41fde09046f3479f25abc8d80d3c1776.dir
+      size: 289477
       nfiles: 4
     - path: src/trainevaluate.py
       md5: 95f90c295a151a3e4be0a0c1a089889f
