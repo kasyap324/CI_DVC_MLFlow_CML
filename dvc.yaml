@@ -1,0 +1,23 @@
+stages:
+  datapreprocessing:
+    cmd: /Users/kasyap/anaconda3/bin/python src/dataprocessing.py
+    deps:
+    - data/wine-quality.csv
+    - src/dataprocessing.py
+    params:
+    - parameters.path
+    - parameters.repo
+    - parameters.version
+    outs:
+    - data1/prepared
+  trainevaluate:
+    cmd: /Users/kasyap/anaconda3/bin/python src/trainevaluate.py
+    deps:
+    - data1/prepared
+    - src/trainevaluate.py
+    params:
+    - parameters.alpha
+    - parameters.l1_ratio
+    - parameters.path
+    - parameters.repo
+    - parameters.version

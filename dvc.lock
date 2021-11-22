@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  datapreprocessing:
+    cmd: /Users/kasyap/anaconda3/bin/python src/dataprocessing.py
+    deps:
+    - path: data/wine-quality.csv
+      md5: bb905a8e35ee30cf4e6b0d54229c22b3
+      size: 209626
+    - path: src/dataprocessing.py
+      md5: 3ea6b40663849a4c8c33c206638ecebc
+      size: 890
+    params:
+      params.yaml:
+        parameters.path: data/wine-quality.csv
+        parameters.repo: /Users/kasyap/Documents/GitHub/CI_DVC_MLFLOW_CML
+        parameters.version: main
+    outs:
+    - path: data1/prepared
+      md5: fec68d87995ef4920c1751c270f1ec1e.dir
+      size: 289768
+      nfiles: 4
+  trainevaluate:
+    cmd: /Users/kasyap/anaconda3/bin/python src/trainevaluate.py
+    deps:
+    - path: data1/prepared
+      md5: fec68d87995ef4920c1751c270f1ec1e.dir
+      size: 289768
+      nfiles: 4
+    - path: src/trainevaluate.py
+      md5: 95f90c295a151a3e4be0a0c1a089889f
+      size: 1896
+    params:
+      params.yaml:
+        parameters.alpha: 0.5
+        parameters.l1_ratio: 0.5
+        parameters.path: data/wine-quality.csv
+        parameters.repo: /Users/kasyap/Documents/GitHub/CI_DVC_MLFLOW_CML
+        parameters.version: main
