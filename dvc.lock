@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   datapreprocessing:
-    cmd: /Users/kasyap/anaconda3/bin/python src/dataprocessing.py
+    cmd: /Users/kasyap/anaconda3/bin/python  src/dataprocessing.py
     deps:
     - path: data/wine-quality.csv
       md5: fcb09923da523f6909210c354ae4296f
@@ -12,18 +12,18 @@ stages:
     params:
       params.yaml:
         parameters.path: data/wine-quality.csv
-        parameters.repo: /Users/kasyap/Documents/GitHub/CI_DVC_MLFLOW_CML
+        parameters.repo: https://github.com/kasyap324/CI_DVC_MLFlow_CML.git
         parameters.version: main
     outs:
     - path: data1/prepared
-      md5: 41fde09046f3479f25abc8d80d3c1776.dir
+      md5: 1b10fadec2d67cfa6804b0402be8fdf7.dir
       size: 289477
       nfiles: 4
   trainevaluate:
-    cmd: /Users/kasyap/anaconda3/bin/python src/trainevaluate.py
+    cmd: /Users/kasyap/anaconda3/bin/python  src/trainevaluate.py
     deps:
     - path: data1/prepared
-      md5: 41fde09046f3479f25abc8d80d3c1776.dir
+      md5: 1b10fadec2d67cfa6804b0402be8fdf7.dir
       size: 289477
       nfiles: 4
     - path: src/trainevaluate.py
@@ -34,5 +34,5 @@ stages:
         parameters.alpha: 0.5
         parameters.l1_ratio: 0.5
         parameters.path: data/wine-quality.csv
-        parameters.repo: /Users/kasyap/Documents/GitHub/CI_DVC_MLFLOW_CML
+        parameters.repo: https://github.com/kasyap324/CI_DVC_MLFlow_CML.git
         parameters.version: main

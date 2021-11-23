@@ -1,6 +1,6 @@
 stages:
   datapreprocessing:
-    cmd: python src/dataprocessing.py
+    cmd: /Users/kasyap/anaconda3/bin/python  src/dataprocessing.py
     deps:
     - data/wine-quality.csv
     - src/dataprocessing.py
@@ -11,7 +11,7 @@ stages:
     outs:
     - data1/prepared
   trainevaluate:
-    cmd: python src/trainevaluate.py
+    cmd: /Users/kasyap/anaconda3/bin/python  src/trainevaluate.py
     deps:
     - data1/prepared
     - src/trainevaluate.py
