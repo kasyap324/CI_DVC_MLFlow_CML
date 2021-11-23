@@ -1,6 +1,6 @@
 parameters:
   path: data/wine-quality.csv
   repo: https://github.com/kasyap324/CI_DVC_MLFlow_CML.git
-  version: main
+  version: experiment
   alpha: 0.5
   l1_ratio: 0.5000
